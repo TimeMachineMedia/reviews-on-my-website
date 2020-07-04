@@ -6,5 +6,12 @@
 */
 {
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./projects/reviews/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/reviews/tsconfig.spec.json"
+    }
+]
 }
