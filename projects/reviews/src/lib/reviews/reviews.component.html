@@ -1,1 +1,4 @@
-<div>reviews works</div>
+<div *ngFor="let review of reviews | async" class="wrapper">
+  <romw-review [review]="review"></romw-review>
+</div>
+

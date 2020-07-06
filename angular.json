@@ -3,11 +3,16 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "reviews": {
+    "@timemachinemedia/reviews-on-my-website": {
       "projectType": "library",
       "root": "projects/reviews",
       "sourceRoot": "projects/reviews/src",
-      "prefix": "lib",
+      "prefix": "romw",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -46,5 +51,5 @@
   "cli": {
     "analytics": "284dcece-d5f7-4eab-8421-4f3cb977bf93"
   },
-  "defaultProject": "reviews"
+  "defaultProject": "@timemachinemedia/reviews-on-my-website"
 }

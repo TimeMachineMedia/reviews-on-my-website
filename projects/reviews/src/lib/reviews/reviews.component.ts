@@ -1,20 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { ReviewsService, Review } from '../reviews.service';
 
 @Component({
-  selector: 'lib-reviews',
-  template: `
-    <p>
-      reviews works!
-    </p>
-  `,
+  selector: 'romw-reviews',
+  templateUrl: './reviews.component.html',
   styles: [
   ]
 })
 export class ReviewsComponent implements OnInit {
+  @Input() token: string
 
-  constructor() { }
+  reviews: BehaviorSubject<Review[]> = new BehaviorSubject([])
+
+  constructor(private reviewService: ReviewsService) { }
 
   ngOnInit(): void {
+    this.reviewService.fetchReviews(this.token).then(reviews => {
+      this.reviews.next(reviews)
+    })
   }
 
 }

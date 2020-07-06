@@ -1,0 +1,46 @@
+.review-wrapper {
+  background-color: white;
+  padding: 1rem;
+  max-width: 60rem;
+  color: #444;
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+
+    .author-photo {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      flex: 0;
+    }
+
+    .author-wrapper {
+      flex: 0;
+      text-align: left;
+      margin-left: 0.75em;
+
+      .author-title {
+        width: 300px;
+        .stars {
+          margin-left: 0.75em;
+          width: 70px;
+          color: #fdc02f;
+        }
+      }
+    }
+
+    .spacer {
+      flex: 1;
+    }
+
+    .logo {
+      flex: 0;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .review-body {
+    margin-top: 40px;
+  }
+}

@@ -1,15 +1,20 @@
-<div>
-  <p class="logo">
-    <img src="assets/facebook_sm.png" alt="Facebook">
-  </p>
-  <p class="author-photo">
-    <img src="" alt="{{authorName}}" />
-    <!-- onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Maria Gardea-Camacho&amp;background=00BCD4&amp;size=75&amp;color=ffffff&amp;rounded=1';" -->
-  </p>
-  <h3 class="stars">
-    <span class="author">{{authorName}}</span>
-    <div>stars</div>>
-  </h3>
-  <p class="date">Jun 5, 2018</p>
-  <p class="review">{{review}}</p>
+<div class="review-wrapper">
+  <div class="header-row">
+    <img class="author-photo" [src]="review.authorImg" [alt]="review.authorName" />
+    <div class="author-wrapper">
+      <div class="author-title">
+        <span>{{review?.authorName}}</span>
+        <span class="stars">
+          <span *ngFor="let star of range(review?.reviewRating)" class="fa fa-star"></span>
+          <span *ngFor="let star of remainderRange(review?.reviewRating)" class="fa fa-star-o"></span>
+        </span>
+      </div>
+      <div class="date">{{formatDate(review?.datePublished)}}</div>
+    </div>
+    <span class="spacer">&nbsp;</span>
+    <img class="logo" [src]="imgPath(review?.reviewSource)" [alt]="review.reviewSource" />
+  </div>
+  <div class="review-body">
+    {{review?.reviewBody}}
+  </div>
 </div>
