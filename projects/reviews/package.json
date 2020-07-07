@@ -1,10 +1,10 @@
 {
   "name": "@timemachinemedia/reviews-on-my-website",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^10.0.2",
     "@angular/core": "^10.0.2",
-    "font-awesome": "^4.7.0",
+    "rxjs": "^6.5.5",
     "moment": "^2.27.0"
   },
   "dependencies": {
