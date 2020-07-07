@@ -1,4 +1,17 @@
-<div *ngFor="let review of reviews | async" class="wrapper">
-  <romw-review [review]="review"></romw-review>
+<div class="wrapper">
+  <div class="review-wrapper">
+    <ng-container *ngFor="let review of reviews | async; let i = index">
+      <div *ngIf="isActive(i)">
+        <romw-review [review]="review"></romw-review>
+      </div>
+    </ng-container>
+  </div>
+  <div class="indicator-wrapper">
+    <span
+      class="indicator"
+      [class.active]="isActive(i)"
+      *ngFor="let review of reviews | async; let i = index"
+      (click)="setIndex(i)"
+    >&nbsp;</span>
+  </div>
 </div>
-

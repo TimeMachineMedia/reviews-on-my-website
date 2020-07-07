@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
 
-import { ReviewsComponent } from './reviews/reviews.component';
-import { ReviewComponent } from './review/review.component';
-import { ReviewsService } from './reviews.service';
+import { ReviewsComponent } from './reviews/reviews.component'
+import { ReviewComponent } from './review/review.component'
+import { ReviewsService } from './reviews.service'
 
 @NgModule({
   declarations: [
