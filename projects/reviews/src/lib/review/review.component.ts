@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Review, ReviewSources } from '../reviews.service';
 import * as moment from 'moment'
 
@@ -7,10 +7,26 @@ import * as moment from 'moment'
   templateUrl: './review.component.html',
   styleUrls: ['./review.component.scss']
 })
-export class ReviewComponent {
+export class ReviewComponent implements OnInit {
   @Input() review: Review
+  initialLength: number = 120
+  public showFullReview = true
+  public needsTruncation = false
+  public truncatedReview: string = ''
 
   constructor() { }
+
+  ngOnInit(): void {
+    const bagOfWords = this.review.reviewBody.split(' ')
+    if(bagOfWords.length > this.initialLength) {
+      this.truncatedReview = bagOfWords.slice(0, this.initialLength).join(' ')
+      this.showFullReview = false
+      this.needsTruncation = true
+    } else {
+      this.showFullReview = true
+      this.needsTruncation = false
+    }
+  }
 
   formatDate (date: string): string {
     return moment(date).format('MMM D, YYYY')

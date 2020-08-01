@@ -14,7 +14,18 @@
     <span class="spacer">&nbsp;</span>
     <img class="logo" [src]="imgPath(review?.reviewSource)" [alt]="review.reviewSource" />
   </div>
-  <div class="review-body">
+
+  <div class="review-body" *ngIf="showFullReview">
     {{review?.reviewBody}}
+    <span *ngIf="needsTruncation" class="toggle-view" (click)="showFullReview = !showFullReview">
+      [ Read Less ]
+    </span>
+  </div>
+
+  <div class="review-body" *ngIf="!showFullReview">
+    {{truncatedReview}}
+    <span class="toggle-view" (click)="showFullReview = !showFullReview">
+      [ Read More ]
+    </span>
   </div>
 </div>

@@ -43,5 +43,14 @@
 
   .review-body {
     margin-top: 40px;
+    min-height: 7em;
+
+    .toggle-view {
+        cursor: pointer;
+        color:rgb(0, 0, 238);
+        font-size: small;
+        font-style: italic;
+        text-decoration: underline;
+    }
   }
 }
