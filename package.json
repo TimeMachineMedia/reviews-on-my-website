@@ -1,6 +1,6 @@
 {
   "name": "@timemachinemedia/reviews-on-my-website",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "build": "ng build",
     "test": "ng test",
