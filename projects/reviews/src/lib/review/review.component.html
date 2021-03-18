@@ -1,31 +1,53 @@
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
 <div class="review-wrapper">
   <div class="header-row">
-    <img class="author-photo" [src]="review.authorImg" [alt]="review.authorName" />
+    <img
+      class="author-photo"
+      [src]="review.authorImg"
+      [alt]="review.authorName"
+    />
     <div class="author-wrapper">
       <div class="author-title">
-        <span>{{review?.authorName}}</span>
+        <span>{{ review?.authorName }}</span>
         <span class="stars">
-          <span *ngFor="let star of range(review?.reviewRating)" class="material-icons-round">
-            star
-            </span>">star</span>
-          <span *ngFor="let star of remainderRange(review?.reviewRating)" class="material-icons-round">star</span>
+          <span
+            *ngFor="let star of range(review?.reviewRating)"
+            class="material-icons-round"
+            >star</span
+          >
+          <span
+            *ngFor="let star of remainderRange(review?.reviewRating)"
+            class="material-icons-round"
+            >star</span
+          >
         </span>
       </div>
-      <div class="date">{{formatDate(review?.datePublished)}}</div>
+      <div class="date">{{ formatDate(review?.datePublished) }}</div>
     </div>
     <span class="spacer">&nbsp;</span>
-    <img class="logo" [src]="imgPath(review?.reviewSource)" [alt]="review.reviewSource" />
+    <img
+      class="logo"
+      [src]="imgPath(review?.reviewSource)"
+      [alt]="review.reviewSource"
+    />
   </div>
 
   <div class="review-body" *ngIf="showFullReview">
-    {{review?.reviewBody}}
-    <span *ngIf="needsTruncation" class="toggle-view" (click)="showFullReview = !showFullReview">
+    {{ review?.reviewBody }}
+    <span
+      *ngIf="needsTruncation"
+      class="toggle-view"
+      (click)="showFullReview = !showFullReview"
+    >
       [ Read Less ]
     </span>
   </div>
 
   <div class="review-body" *ngIf="!showFullReview">
-    {{truncatedReview}}
+    {{ truncatedReview }}
     <span class="toggle-view" (click)="showFullReview = !showFullReview">
       [ Read More ]
     </span>
