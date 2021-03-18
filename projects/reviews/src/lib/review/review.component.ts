@@ -18,7 +18,7 @@ export class ReviewComponent implements OnInit {
 
   ngOnInit(): void {
     const bagOfWords = this.review.reviewBody.split(' ')
-    if(bagOfWords.length > this.initialLength) {
+    if (bagOfWords.length > this.initialLength) {
       this.truncatedReview = bagOfWords.slice(0, this.initialLength).join(' ')
       this.showFullReview = false
       this.needsTruncation = true
@@ -28,7 +28,7 @@ export class ReviewComponent implements OnInit {
     }
   }
 
-  formatDate (date: string): string {
+  formatDate(date: string): string {
     return moment(date).format('MMM D, YYYY')
   }
 
@@ -36,13 +36,13 @@ export class ReviewComponent implements OnInit {
     const rating = parseInt(reviewRating)
     return new Array(rating)
   }
-  
+
   remainderRange(reviewRating: string): string[] {
     const rating = parseInt(reviewRating)
     return new Array(5 - rating)
   }
 
-  imgPath (type: ReviewSources): string {
+  imgPath(type: ReviewSources): string {
     switch (type) {
       case ReviewSources.GOOGLE:
         return "https://reviewsonmywebsite.com/images/source-logos/google_sm.png"
@@ -50,6 +50,10 @@ export class ReviewComponent implements OnInit {
         return "https://reviewsonmywebsite.com/images/source-logos/facebook_sm.png"
       case ReviewSources.YELP:
         return "https://reviewsonmywebsite.com/images/source-logos/yelp_sm.png"
+      case ReviewSources.WEDDINGWIRE:
+        return "https://reviewsonmywebsite.com/images/source-logos/weddingwire_sm.png"
+      case ReviewSources.THEKNOT:
+        return "https://reviewsonmywebsite.com/images/source-logos/theknot_sm.png"
     }
   }
 }

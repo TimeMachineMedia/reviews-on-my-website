@@ -4,7 +4,9 @@ import { HttpClient } from '@angular/common/http';
 export enum ReviewSources {
   GOOGLE="Google",
   FACEBOOK="Facebook",
-  YELP="Yelp"
+  YELP="Yelp",
+  WEDDINGWIRE="WeddingWire",
+  THEKNOT="The Knot"
 }
 
 export interface Review {
