@@ -5,8 +5,8 @@
       <div class="author-title">
         <span>{{review?.authorName}}</span>
         <span class="stars">
-          <span *ngFor="let star of range(review?.reviewRating)" class="fa fa-star"></span>
-          <span *ngFor="let star of remainderRange(review?.reviewRating)" class="fa fa-star-o"></span>
+          <span *ngFor="let star of range(review?.reviewRating)" class="stars"></span>
+          <span *ngFor="let star of remainderRange(review?.reviewRating)" class="stars"></span>
         </span>
       </div>
       <div class="date">{{formatDate(review?.datePublished)}}</div>
