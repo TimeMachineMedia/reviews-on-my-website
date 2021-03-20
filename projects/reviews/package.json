@@ -2,8 +2,10 @@
   "name": "@timemachinemedia/reviews-on-my-website",
   "version": "0.0.8",
   "peerDependencies": {
-    "@angular/common": "^10.0.2",
-    "@angular/core": "^10.0.2",
+    "@angular/cdk": "~11.2.5",
+    "@angular/common": "~12.0.0",
+    "@angular/core": "~12.0.0",
+    "@angular/material": "~11.2.5",
     "rxjs": "^6.5.5",
     "moment": "^2.27.0"
   },
