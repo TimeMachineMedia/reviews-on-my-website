@@ -13,16 +13,18 @@
       <div class="author-title">
         <span>{{ review?.authorName }}</span>
         <span class="stars">
-          <span
+          <mat-icon
             *ngFor="let star of range(review?.reviewRating)"
             class="material-icons-round"
-            >star</span
           >
-          <span
+            star
+          </mat-icon>
+          <mat-icon
             *ngFor="let star of remainderRange(review?.reviewRating)"
             class="material-icons-round"
-            >star</span
           >
+            star
+          </mat-icon>
         </span>
       </div>
       <div class="date">{{ formatDate(review?.datePublished) }}</div>
